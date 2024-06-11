@@ -3,8 +3,7 @@ import { AuthList } from '@/lib/createSchema';
 import { NextResponse } from 'next/server';
 
 
-
-export async function POST(req: NextResponse) {
+export const POST = async (request: Request): Promise<NextResponse> => {
     interface User{
         email:string,
     }
