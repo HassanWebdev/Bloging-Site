@@ -16,6 +16,6 @@ export const POST = async (request: Request): Promise<NextResponse> => {
     await isMatched.save()
     return  NextResponse.json({"message":"Publish Succefully"},{status:201})}
     catch(e){
-        return new NextResponse("Error Occured")
+        return  NextResponse.json({"message":e.message})
     }
 }
