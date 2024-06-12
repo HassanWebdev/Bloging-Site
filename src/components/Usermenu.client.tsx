@@ -22,7 +22,7 @@ const UserMenu = ({ user }) => {
     setIsLoggedIn(!!user);
   }, [user]);
   const handleLogout = async () => {
-    const response = await fetch('http://localhost:3000/actions/api');
+    const response = await fetch('https://next-js-drab-chi.vercel.app/actions/api');
     const data = await response.json();
 
     if (data.success) {
