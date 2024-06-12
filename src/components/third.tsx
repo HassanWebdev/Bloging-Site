@@ -10,7 +10,7 @@ const Third = () => {
     setloading(true);
     const getdata = async () => {
       const res = await axios.post(
-        'http://localhost:3000/enter/api3',
+        'https://next-js-drab-chi.vercel.app/enter/api3',
         JSON.stringify({ email: 'hassan' })
       );
       const selectedarray = res?.data.Posts.splice(0, 4);
