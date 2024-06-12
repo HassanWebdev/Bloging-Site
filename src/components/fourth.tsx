@@ -71,7 +71,6 @@ const Fourth = () => {
       {loading ? (
         <div className='flex justify-center items-center'>
           <ThreeDots
-            type='ThreeDots'
             color='#00BFFF'
             height={100}
             width={100}
