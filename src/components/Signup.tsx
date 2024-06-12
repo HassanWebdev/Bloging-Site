@@ -38,7 +38,7 @@ function Signup() {
 
     setloading(true);
     try {
-      const res = await axios.post('http://localhost:3000/Signup/api', JSON.stringify({ name, email, password }));
+     const res = await axios.post('https://next-js-drab-chi.vercel.app/Signup/api', JSON.stringify({ name, email, password }));
       setloading(false);
       toast.success(`${res?.data.Message}`);
     } catch (error) {
