@@ -13,7 +13,7 @@ const Myblog2 = ({ user }) => {
   useEffect(() => {
     const getuser = async () => {
       await axios
-        .post('http://localhost:3000/enter/api2', JSON.stringify({ email: user.email }))
+        .post('https://next-js-drab-chi.vercel.app/enter/api2', JSON.stringify({ email: user.email }))
         .then((res) => setblogs(res.data.Posts));
     };
     getuser();
@@ -23,9 +23,9 @@ const Myblog2 = ({ user }) => {
     setLoadingStates((prevState) => ({ ...prevState, [id]: true }));
 
     try {
-      await axios.post('http://localhost:3000/enter/api4', JSON.stringify({ email: email, id: id }));
+      await axios.post('https://next-js-drab-chi.vercel.app/enter/api4', JSON.stringify({ email: email, id: id }));
       toast.success('Post Deleted');
-      const res = await axios.post('http://localhost:3000/enter/api2', JSON.stringify({ email: user.email }));
+      const res = await axios.post('https://next-js-drab-chi.vercel.app/enter/api2', JSON.stringify({ email: user.email }));
       setblogs(res.data.Posts);
     } finally {
       setLoadingStates((prevState) => ({ ...prevState, [id]: false }));
