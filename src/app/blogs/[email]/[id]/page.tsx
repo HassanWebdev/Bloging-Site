@@ -42,7 +42,7 @@ const Blog = ({ params }: { params: { email: string; id: any } }) => {
   const handlecomment = async () => {
     setloading(true);
     await axios.post(
-      'http://localhost:3000/enter/api',
+      'https://next-js-drab-chi.vercel.app/enter/api',
       JSON.stringify({
         email: params.email,
         id: params.id,
@@ -55,7 +55,7 @@ const Blog = ({ params }: { params: { email: string; id: any } }) => {
   useEffect(() => {
     const getdata = async () => {
       const res = await axios.post(
-        'http://localhost:3000/enter/api2',
+        'https://next-js-drab-chi.vercel.app/enter/api2',
         JSON.stringify({ email: 'hassan' })
       );
       const dataa = res?.data.Posts.find(
