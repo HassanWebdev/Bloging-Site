@@ -208,7 +208,7 @@ const Editoor = ({ user }) => {
                 }`}
               >
                 <Editor
-                  apiKey='1rif8v1scs3zj3rf3u6dbpu6ck2owndmylh2v9red697kawr'
+                  
                   initialValue=''
                   init={{
                     height: 400,
