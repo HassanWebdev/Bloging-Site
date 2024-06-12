@@ -86,7 +86,7 @@ const Editoor = ({ user }) => {
       const Posts = { email:user.email, img: imgUrl, title, content, category: value };
       await axios
         .post(
-          'http://localhost:3000/enter',
+         'https://next-js-drab-chi.vercel.app/enter',
           JSON.stringify({ email: user.email, Posts })
         )
         .then((res) => {toast.success(`Publish Successfully`);route.push('/Myblog')});
