@@ -27,7 +27,7 @@ function Signup() {
     setpasslength(false);
     setloading(true);
     try {
-      const res = await axios.post('http://localhost:3000/Login/api', JSON.stringify({email,password}));
+      const res = await axios.post('https://next-js-drab-chi.vercel.app/Login/api', JSON.stringify({email,password}));
       setloading(false);
       toast.success(`${res?.data.message}` )
       router.push('/')
