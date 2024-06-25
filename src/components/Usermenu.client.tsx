@@ -27,10 +27,9 @@ const UserMenu = ({ user }) => {
 
     if (data.success) {
       setIsLoggedIn(false);
-      redirect('/')  
-      router.refresh(); 
+      redirect('/')   
     } else {
-      router.push('/Login')
+      redirect('/Login')
         null
     }
   };
