@@ -10,7 +10,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu';
-import { useRouter } from 'next/navigation';
+import { useRouter,redirect } from 'next/navigation';
 import Link from 'next/link';
 
 
@@ -27,7 +27,7 @@ const UserMenu = ({ user }) => {
 
     if (data.success) {
       setIsLoggedIn(false);
-      router.push('/');  
+      redirect('/')  
       router.refresh(); 
     } else {
       router.push('/Login')
