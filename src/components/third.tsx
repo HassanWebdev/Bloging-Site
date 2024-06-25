@@ -49,7 +49,7 @@ const Third = () => {
                     />
                   </div>
                   <div className='w-full h-[35%] flex flex-col gap-4'>
-                    <h1 className='text-sm font-sans'>Jun 12, 2023 2 min</h1>
+                    <h1 className='text-sm font-sans'>item.date</h1>
                     <h1 className='break-words  font-title text-xl'>
                       {item.title}
                     </h1>
