@@ -6,6 +6,7 @@ import Navbar from '@/components/Navbar';
 function page() {
   return (
     <div>
+      <Navbar/>
       <Hero/>
       <Third/>
       <Fourth/>
