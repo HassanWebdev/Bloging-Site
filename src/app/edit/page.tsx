@@ -3,6 +3,7 @@ import Editoor from '@/components/getuser'
 const Editor = ()=>{
   return(
     <> 
+      <Navbar/>
     <hr />
     <Editoor/>
     </>
