@@ -1,6 +1,7 @@
 import { cookies } from 'next/headers';
 import Myblog2 from './Myblog2';
 import jwt from 'jsonwebtoken';
+import Navbar from './Navbar'
 const Myblog = ()=>{
     const cookiesStore = cookies();
     const token = cookiesStore.get('token');
@@ -16,6 +17,7 @@ const Myblog = ()=>{
     }
     return (
       <>
+          <Navbar/>
       {user ?<Myblog2 user={user} />: <h1 className='text-8xl text-red-600'>You are not logged in</h1>}
       </>
     )
