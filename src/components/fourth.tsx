@@ -17,14 +17,11 @@ const Fourth = () => {
   const [loading, setloading] = useState(false);
   const [filter, setfilter] = useState([]);
   const [data, setdata] = useState([]);
-  const [currentPage, setCurrentPage] = useState(1);
-  const itemsPerPage = 4;
-
   useEffect(() => {
     setloading(true);
     const getdata = async () => {
       const res = await axios.post(
-        'http://localhost:3000/enter/api3',
+        'https://next-js-drab-chi.vercel.app/enter/api3',
         JSON.stringify({ email: 'hassan' })
       );
       setdata(res.data.Posts);
@@ -33,7 +30,6 @@ const Fourth = () => {
     };
     getdata();
   }, []);
-
   const handlefilter = (e) => {
     switch (e.target.id) {
       case 'nature':
@@ -68,17 +64,6 @@ const Fourth = () => {
         setfilter(data);
         break;
     }
-    setCurrentPage(1);
-  };
-
-  const indexOfLastItem = currentPage * itemsPerPage;
-  const indexOfFirstItem = indexOfLastItem - itemsPerPage;
-  const currentItems = filter.slice(indexOfFirstItem, indexOfLastItem);
-
-  const pageCount = Math.ceil(filter.length / itemsPerPage);
-
-  const handlePageChange = (pageNumber) => {
-    setCurrentPage(pageNumber);
   };
 
   return (
@@ -134,7 +119,7 @@ const Fourth = () => {
             </button>
           </div>
           <div className='flex justify-between flex-wrap mt-10'>
-            {currentItems.map((item, index) => {
+            {filter.map((item, index) => {
               return (
                 <Link
                   href={`/blogs/${item.email}/${item?._id}`}
@@ -161,26 +146,24 @@ const Fourth = () => {
           <Pagination>
             <PaginationContent>
               <PaginationItem>
-                <PaginationPrevious 
-                  onClick={() => handlePageChange(currentPage - 1)}
-                  disabled={currentPage === 1}
-                />
+                <PaginationPrevious href='#' />
               </PaginationItem>
-              {[...Array(pageCount)].map((_, index) => (
-                <PaginationItem key={index}>
-                  <PaginationLink
-                    onClick={() => handlePageChange(index + 1)}
-                    isActive={currentPage === index + 1}
-                  >
-                    {index + 1}
-                  </PaginationLink>
-                </PaginationItem>
-              ))}
               <PaginationItem>
-                <PaginationNext 
-                  onClick={() => handlePageChange(currentPage + 1)}
-                  disabled={currentPage === pageCount}
-                />
+                <PaginationLink href='#'>1</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href='#' isActive>
+                  2
+                </PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationLink href='#'>3</PaginationLink>
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationEllipsis />
+              </PaginationItem>
+              <PaginationItem>
+                <PaginationNext href='#' />
               </PaginationItem>
             </PaginationContent>
           </Pagination>
@@ -189,6 +172,4 @@ const Fourth = () => {
     </div>
   );
 };
-
 export default Fourth;
-
